@@ -1,8 +1,4 @@
-a = [0] * 101
-i = 0
-while i <= 100:
-    a[i] = i
-    i+=1
-print(a)
+nums = [1, 2, 3, 4, 5]
 
-print("a[5:15:3] is : ", a[5:15:3])
+res = list(filter(lambda x: x%2 == 0, nums))
+print(res)
