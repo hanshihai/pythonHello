@@ -1,4 +1,7 @@
-nums = [1, 2, 3, 4, 5]
 
-res = list(filter(lambda x: x%2 == 0, nums))
-print(res)
+def main(total_week):
+    print("hello python")
+
+
+if __name__ ==  '__main__':
+    main(52)
