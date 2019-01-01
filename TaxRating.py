@@ -20,9 +20,11 @@ class TaxRating:
         return self.discard
 
 
+BASE_NO_TAX_RATING = 5000
 ratings = []
 
-def main():
+
+def init():
     global ratings
     rating1 = TaxRating(0, 3000, 0.03, 0)
     rating2 = TaxRating(3000, 12000, 0.1, 210)
@@ -30,18 +32,32 @@ def main():
     rating4 = TaxRating(25000, 35000, 0.25, 2660)
     rating5 = TaxRating(35000, 55000, 0.3, 4410)
     rating6 = TaxRating(55000, 80000, 0.35, 7160)
-    rating7 = TaxRating(80000, 1000000, 0.45, 15160)
+    rating7 = TaxRating(80000, 9990000, 0.45, 15160)
 
     ratings.append(rating1)
     ratings.append(rating2)
     ratings.append(rating3)
     ratings.append(rating4)
-    ratings.append(rating5)
-    ratings.append(rating6)
-    ratings.append(rating7)
-
-    print(len(ratings))
 
 
-if __name__ ==  '__main__':
+def calculateTax(salary, special_discard):
+    init()
+    tax = 0.0
+    taxableSalary = salary - special_discard - BASE_NO_TAX_RATING
+    for rating in ratings:
+        if rating.isInRanges(taxableSalary):
+            tax = taxableSalary * rating.getRating() - rating.getDiscard()
+            break
+
+    return tax
+
+
+def main():
+    salary_input = input("please input taxable salary and special non-taxable salary with space: ")
+    salary = salary_input.split(" ")
+    tax = calculateTax((float)(salary[0]), (float)(salary[1]))
+    print(tax)
+
+
+if __name__ == '__main__':
     main()

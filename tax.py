@@ -25,6 +25,8 @@ def main():
     input_list = total_input.split(' ')
     total_income = input_list[0]
     rating_money = input_list[1]
+
+    #TODO need to know how to calculate tax
     tax_money = input_list[2]
 
     company_age_output = float(rating_money) * COMPANY_AGE
