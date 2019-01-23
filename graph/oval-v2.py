@@ -18,6 +18,9 @@ def main(a, b):
     x = -a
     dt = a / STEP_LENGTH
 
+    '''
+    enable the formula for oval; x**2 / a**2 + y**2 / b**2 = 1
+    '''
     while x <= a:
         y = np.sqrt((1 - np.power(x,2) / np.power(a, 2)) * np.power(b, 2))
         print("x:y - {}:{}".format(x, y))
