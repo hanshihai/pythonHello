@@ -16,13 +16,19 @@ So
 ### the delta of y: n
 
 the origin curve m = 0 and n = 0:
-
+![origin curve](init.png)
 
 the move-left curve m = 1 and n = 0:
+![origin curve](left.png)
 
 the move-right curve m =-1 and n =0:
+![origin curve](right.png)
 
 the move-up curve m = 0 and n = 1:
+![origin curve](up.png)
 
 the move-down curve m = 0 and n = -1:
+![origin curve](down.png)
 
+
+The python code: https://github.com/hanshihai/pythonHello/blob/master/graph/yxx.py
