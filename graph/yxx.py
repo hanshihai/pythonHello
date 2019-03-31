@@ -1,14 +1,23 @@
 import matplotlib.pyplot as plt
 
 
-def main(a, b):
+def main(a, b, c):
 
-    x = -10
+    m = b / (2 * a)
+    n = (4*a*c - b*b) / (4*a)
+    print(" --- y = {}x^2 + {}x + {} ---".format(a,b,c))
+    print(" --- m = {} , and n = {}".format(m, n))
+
+    middle = -m
+    min = -5
+    max = middle + 5
+
+    x = min + middle
 
     plt.grid(color='gray', linestyle='-', linewidth=1)
 
-    while x < 11:
-        y = (x+a)*(x+a) + b
+    while x <= max:
+        y = a * x * x + b * x + c
         print("x: {} - y: {}".format(x, y))
         plt.scatter(x, y)
         x += 1
@@ -18,10 +27,11 @@ def main(a, b):
 
 if __name__ == "__main__":
     while True:
-        inputs = input("please input a and b: ")
+        inputs = input("please input a, b, and c: ")
         if inputs == "q":
             break
         input_array = inputs.split(" ")
         a = int(input_array[0])
         b = int(input_array[1])
-        main(a,b)
+        c = int(input_array[2])
+        main(a,b,c)
