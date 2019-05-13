@@ -1,5 +1,5 @@
 import requests
-import json
+import json_example
 from bs4 import BeautifulSoup
 
 '''
@@ -29,7 +29,7 @@ def parseHtml(url):
 def parseJson(url):
     response = requests.get(url, {'timeout': 30})
     if response.status_code == 200:
-        json_content = json.loads(response.text, encoding='UTF-8')
+        json_content = json_example.loads(response.text, encoding='UTF-8')
         return json_content
     else:
         return None
